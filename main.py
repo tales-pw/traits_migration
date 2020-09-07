@@ -1,3 +1,4 @@
+# Запускайте меня
 from typing import Callable, List
 
 from pony.orm import db_session
@@ -6,8 +7,8 @@ import configuration
 from database.new_db import db as new_db, DBGameObject
 from database.old_db import db as old_db, DBCharacter
 
-migrations: List[Callable[[DBGameObject, DBCharacter], None]] = [
-
+migrations: List[Callable[[DBCharacter, DBGameObject], None]] = [
+    # Сюда пишите ваши функции, которые принимают DBCharacter и DBGameObject как аргументы
 ]
 
 
@@ -21,7 +22,7 @@ def migrate():
         )
 
         for migration in migrations:
-            migration(db_game_object, db_character)
+            migration(db_character, db_game_object)
 
 
 def main():
