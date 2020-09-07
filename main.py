@@ -1,7 +1,7 @@
 # Запускайте меня
 from typing import Callable, List
 
-from pony.orm import db_session
+from pony.orm import db_session, select
 
 import configuration
 from database.new_db import db as new_db, DBGameObject
@@ -14,7 +14,7 @@ migrations: List[Callable[[DBCharacter, DBGameObject], None]] = [
 
 @db_session
 def migrate():
-    for db_character in DBCharacter.select():
+    for db_character in select(a for a in DBCharacter):
         db_character: DBCharacter
         db_game_object = DBGameObject(
             dn=db_character.name,
