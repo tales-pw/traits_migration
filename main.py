@@ -6,9 +6,11 @@ from pony.orm import db_session, select
 import configuration
 from database.new_db import db as new_db, DBGameObject
 from database.old_db import db as old_db, DBCharacter
+from migrations.character_info import migrate_character_info
 
 migrations: List[Callable[[DBCharacter, DBGameObject], None]] = [
     # Сюда пишите ваши функции, которые принимают DBCharacter и DBGameObject как аргументы
+    migrate_character_info
 ]
 
 
