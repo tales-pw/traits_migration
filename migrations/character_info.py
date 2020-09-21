@@ -18,17 +18,12 @@ __old_new_relation = {
 
 def migrate_character_info(db_character: DBCharacter, db_game_object: DBGameObject) -> None:
     for old_dn, new_type in __old_new_relation.items():
-        try:
-            value = DBTextInstance[old_dn, db_character].value
-        except ObjectNotFound:
-            value = ""
-
         DBTrait(
             dn=new_type,
             game_object=db_game_object,
             data={
                 "dn": new_type,
                 "type": new_type,
-                "value": value
+                "value": db_character.get_text(old_dn, "")
             }
         )

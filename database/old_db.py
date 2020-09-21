@@ -13,6 +13,18 @@ class DBCharacter(db.Entity):
     traits = Set(lambda: DBTraitInstance)
     specialities = Set(lambda: DBSpecialityInstance)
 
+    def get_text(self, dn: str, default: str = "") -> str:
+        try:
+            return DBTextInstance[dn, self].value
+        except ObjectNotFound:
+            return default
+
+    def get_number(self, dn: str, default: int = 0) -> int:
+        try:
+            return DBTextInstance[dn, self].value
+        except ObjectNotFound:
+            return default
+
 
 class DBTraitInstance(db.Entity):
     dn: str = Required(str)
