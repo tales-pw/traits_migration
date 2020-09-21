@@ -7,10 +7,12 @@ import configuration
 from database.new_db import db as new_db, DBGameObject
 from database.old_db import db as old_db, DBCharacter
 from migrations.character_info import migrate_character_info
+from migrations.experience import migrate_experience
 
 migrations: List[Callable[[DBCharacter, DBGameObject], None]] = [
     # Сюда пишите ваши функции, которые принимают DBCharacter и DBGameObject как аргументы
-    migrate_character_info
+    migrate_character_info,
+    migrate_experience
 ]
 
 
