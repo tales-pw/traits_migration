@@ -1,7 +1,5 @@
-from pony.orm import ObjectNotFound
-
 from database.new_db import DBGameObject, DBTrait
-from database.old_db import DBCharacter, DBTextInstance, DBTraitInstance
+from database.old_db import DBCharacter
 
 
 def migrate_health(db_character: DBCharacter, db_game_object: DBGameObject) -> None:

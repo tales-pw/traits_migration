@@ -1,7 +1,5 @@
-from pony.orm import ObjectNotFound
-
 from database.new_db import DBGameObject, DBTrait
-from database.old_db import DBCharacter, DBTextInstance
+from database.old_db import DBCharacter
 
 __old_new_relation = {
     "Порок": "Порок",

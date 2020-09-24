@@ -1,7 +1,5 @@
-from pony.orm import ObjectNotFound
-
 from database.new_db import DBGameObject, DBTrait
-from database.old_db import DBCharacter, DBTextInstance
+from database.old_db import DBCharacter
 
 
 def __parse_text_instance(dn: str, db_character: DBCharacter) -> int:
