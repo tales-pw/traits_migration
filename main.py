@@ -10,6 +10,7 @@ from migrations.attributes_and_skills import migrate_attributes_and_skills
 from migrations.character_info import migrate_character_info
 from migrations.experience import migrate_experience
 from migrations.health import migrate_health
+from migrations.human_template import migrate_human_template
 from migrations.merits import migrate_merits
 from migrations.merits_custom import migrate_custom_merits
 
@@ -20,7 +21,8 @@ migrations: List[Callable[[DBCharacter, DBGameObject], None]] = [
     migrate_experience,
     migrate_health,
     migrate_merits,
-    migrate_custom_merits
+    migrate_custom_merits,
+    migrate_human_template
 ]
 
 
