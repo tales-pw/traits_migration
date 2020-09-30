@@ -1,6 +1,6 @@
 import datetime
 
-from pony.orm import Database, ObjectNotFound, Optional, PrimaryKey, Required, Set, db_session
+from pony.orm import Database, ObjectNotFound, Optional, PrimaryKey, Required, Set
 
 db = Database()
 

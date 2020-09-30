@@ -6,6 +6,7 @@ from pony.orm import db_session, select
 import configuration
 from database.new_db import db as new_db, DBGameObject
 from database.old_db import db as old_db, DBCharacter
+from migrations.Integrity import migrate_integrity
 from migrations.attributes_and_skills import migrate_attributes_and_skills
 from migrations.character_info import migrate_character_info
 from migrations.experience import migrate_experience
@@ -22,7 +23,8 @@ migrations: List[Callable[[DBCharacter, DBGameObject], None]] = [
     migrate_health,
     migrate_merits,
     migrate_custom_merits,
-    migrate_human_template
+    migrate_human_template,
+    migrate_integrity
 ]
 
 
