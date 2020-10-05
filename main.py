@@ -22,7 +22,9 @@ migrations: List[Callable[[DBCharacter, DBGameObject], None]] = [
     migrate_health,
     migrate_merits,
     migrate_custom_merits,
-    migrate_human_template
+    migrate_human_template,
+    migrate_integrity,
+    migrate_aspiration
 ]
 
 
