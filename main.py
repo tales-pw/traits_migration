@@ -6,11 +6,13 @@ from pony.orm import db_session, select
 import configuration
 from database.new_db import db as new_db, DBGameObject
 from database.old_db import db as old_db, DBCharacter
+from migrations.aspiration import migrate_aspiration
 from migrations.attributes_and_skills import migrate_attributes_and_skills
 from migrations.character_info import migrate_character_info
 from migrations.experience import migrate_experience
 from migrations.health import migrate_health
 from migrations.human_template import migrate_human_template
+from migrations.integrity import migrate_integrity
 from migrations.merits import migrate_merits
 from migrations.merits_custom import migrate_custom_merits
 
