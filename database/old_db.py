@@ -1,6 +1,6 @@
 import datetime
 
-from pony.orm import Database, ObjectNotFound, Optional, PrimaryKey, Required, Set, db_session
+from pony.orm import Database, ObjectNotFound, Optional, PrimaryKey, Required, Set
 
 db = Database()
 
@@ -21,7 +21,7 @@ class DBCharacter(db.Entity):
 
     def get_number(self, dn: str, default: int = 0) -> int:
         try:
-            return DBTextInstance[dn, self].value
+            return DBTraitInstance[dn, self].value
         except ObjectNotFound:
             return default
 
