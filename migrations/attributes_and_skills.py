@@ -1,7 +1,7 @@
 from database.new_db import DBGameObject, DBTrait
 from database.old_db import DBCharacter
 
-__old_new_relation = {
+trait_old_new_relation = {
     "Эрудиция": "Эрудиция",
     "Эмпатия": "Эмпатия",
     "Холодное оружие": "Холодное оружие",
@@ -25,7 +25,7 @@ __old_new_relation = {
     "Кража": "Кража",
     "Концентрация": "Концентрация",
     "Интеллект": "Интеллект",
-    "Знание_животных": "Знание_животных",
+    "Знание животных": "Знание_животных",
     "Знание улиц": "Знание улиц",
     "Запугивание": "Запугивание",
     "Загадки": "Загадки",
@@ -42,7 +42,7 @@ ATTRIBUTES = {"Интеллект", "Концентрация", "Смекалк�
 
 
 def migrate_attributes_and_skills(db_character: DBCharacter, db_game_object: DBGameObject) -> None:
-    for old_dn, new_type in __old_new_relation.items():
+    for old_dn, new_type in trait_old_new_relation.items():
         DBTrait(
             dn=new_type,
             game_object=db_game_object,

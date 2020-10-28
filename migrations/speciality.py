@@ -2,6 +2,7 @@ from pony.orm import select
 
 from database.new_db import DBGameObject, DBTrait
 from database.old_db import DBCharacter, DBSpecialityInstance
+from migrations.attributes_and_skills import trait_old_new_relation
 
 
 def migrate_specialities(db_character: DBCharacter, db_game_object: DBGameObject) -> None:
@@ -15,6 +16,6 @@ def migrate_specialities(db_character: DBCharacter, db_game_object: DBGameObject
                 "dn": speciality.dn,
                 "type": "Специализация",
                 "name": speciality.value,
-                "skill": speciality.trait_dn
+                "skill": trait_old_new_relation.get(speciality.trait_dn)
             }
         )
