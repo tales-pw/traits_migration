@@ -12,6 +12,7 @@ from migrations.attributes_and_skills import migrate_attributes_and_skills
 from migrations.character_info import migrate_character_info
 from migrations.defence import migrate_defence
 from migrations.experience import migrate_experience
+from migrations.generation_advancement import migrate_generation_advancement
 from migrations.health import migrate_health
 from migrations.human_template import migrate_human_template
 from migrations.initiative_mod import migrate_initiative_mod
@@ -48,7 +49,8 @@ migrations: List[Callable[[DBCharacter, DBGameObject], None]] = [
     migrate_willpower,
     migrate_speed,
     migrate_size,
-    migrate_specialities
+    migrate_specialities,
+    migrate_generation_advancement
 ]
 
 
