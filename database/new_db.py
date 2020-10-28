@@ -6,6 +6,8 @@ db = Database()
 
 
 class DBGameObject(db.Entity):
+    _table_ = "dbgameobject"
+
     dn: str = PrimaryKey(str)
     version: datetime = Required(datetime, default=datetime.utcnow())
 
@@ -13,6 +15,8 @@ class DBGameObject(db.Entity):
 
 
 class DBTrait(db.Entity):
+    _table_ = "dbtrait"
+
     dn: str = Required(str)
     data = Required(Json)
 
