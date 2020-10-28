@@ -18,5 +18,5 @@ def migrate_aspiration(db_character: DBCharacter, db_game_object: DBGameObject) 
                 data={
                     "dn": dn,
                     "type": "Стремление",
-                    "value  ": aspiration
+                    "value": aspiration
                 })
